@@ -2,5 +2,5 @@
   tasks:
     - name: Deploy to Kubernetes
       shell: |
-        kubectl apply -f /home/ubuntu/deployment.yml
+        kubectl apply -f /home/ubuntu/Deployment.yml
         kubectl apply -f /home/ubuntu/service.yml
