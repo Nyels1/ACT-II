@@ -1,5 +1,15 @@
-- hosts: webnode
+- name: webnode
+  hosts: all
   tasks:
+    - name: Copiar archivos YAML al servidor destino
+      copy:
+        src: "/home/ubuntu/{{ item }}"
+        dest: "/home/ubuntu/{{ item }}"
+        mode: '0644'
+      loop:
+        - Deployment.yml
+        - service.yml
+
     - name: Deploy to Kubernetes
       shell: |
         kubectl apply -f /home/ubuntu/Deployment.yml
