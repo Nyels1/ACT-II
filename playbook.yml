@@ -10,7 +10,9 @@
         - Deployment.yml
         - service.yml
 
-    - name: Deploy to Kubernetes
+- name: Deploy to Kubernetes
       shell: |
+        # Reemplaza el texto 'DOCKER_IMAGE_TAG' por el valor real en el archivo
+        sed -i "s|DOCKER_IMAGE_VALUE|{{ DOCKER_IMAGE }}|g" /home/ubuntu/Deployment.yml
         kubectl apply -f /home/ubuntu/Deployment.yml
         kubectl apply -f /home/ubuntu/service.yml
