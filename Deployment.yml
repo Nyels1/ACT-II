@@ -13,7 +13,7 @@ spec:
         app: my-app
     spec:
       containers:
-      - name: my-app-container
-        image: ${DOCKER_IMAGE}  # Variable dinámica
+      - name: my-app
+        image: DOCKER_IMAGE_VALUE
         ports:
         - containerPort: 80
